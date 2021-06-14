@@ -1,3 +1,38 @@
 = Delta Lake Shell
 
 `dlsh` is a shell for simple querying of Delta Lake tables.
+
+[source]
+----
+dlsh> load ./data/COVID-19_NYT as covid
+dlsh> select * from covid where county = 'Sonoma' order by date desc limit 5
++------------+--------+------------+------+-------+--------+
+| date       | county | state      | fips | cases | deaths |
++------------+--------+------------+------+-------+--------+
+| 2021-03-11 | Sonoma | California | 6097 | 28638 | 306    |
+| 2021-03-10 | Sonoma | California | 6097 | 28601 | 306    |
+| 2021-03-09 | Sonoma | California | 6097 | 28571 | 306    |
+| 2021-03-08 | Sonoma | California | 6097 | 28533 | 303    |
+| 2021-03-07 | Sonoma | California | 6097 | 28484 | 303    |
++------------+--------+------------+------+-------+--------+
+dlsh> load ./data/simple_table as simple
+dlsh> select * from covid where county = 'Sonoma' order by date desc limit 5
++------------+--------+------------+------+-------+--------+
+| date       | county | state      | fips | cases | deaths |
++------------+--------+------------+------+-------+--------+
+| 2021-03-11 | Sonoma | California | 6097 | 28638 | 306    |
+| 2021-03-10 | Sonoma | California | 6097 | 28601 | 306    |
+| 2021-03-09 | Sonoma | California | 6097 | 28571 | 306    |
+| 2021-03-08 | Sonoma | California | 6097 | 28533 | 303    |
+| 2021-03-07 | Sonoma | California | 6097 | 28484 | 303    |
++------------+--------+------------+------+-------+--------+
+dlsh> select * from simple
++----+
+| id |
++----+
+| 5  |
+| 7  |
+| 9  |
++----+
+dlsh>
+----
