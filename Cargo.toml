@@ -1,0 +1,15 @@
+[package]
+name = "dlsh"
+version = "0.1.0"
+authors = ["R. Tyler Croy <rtyler@brokenco.de>"]
+edition = "2018"
+
+[dependencies]
+arrow = "4"
+datafusion = "4"
+deltalake = { git = "https://github.com/delta-io/delta-rs", branch = "main", features = ["s3", "datafusion-ext"] }
+dotenv = "0.15"
+log = "*"
+pretty_env_logger = "*"
+rustyline = "8"
+tokio = "1"

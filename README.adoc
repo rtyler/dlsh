@@ -1,0 +1,3 @@
+= Delta Lake Shell
+
+`dlsh` is a shell for simple querying of Delta Lake tables.
